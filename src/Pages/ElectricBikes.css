@@ -1,0 +1,142 @@
+/* === Yamaha Electric Racing Theme: Electric Bikes Page === */
+
+.electric-page {
+  background: linear-gradient(135deg, #000000, #0d0d0d, #001f33);
+  background-size: 400% 400%;
+  animation: electricShift 10s ease infinite;
+  color: #fff;
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.electric-page h1 {
+  text-align: center;
+  color: #ff0000;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.7),
+               0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+/* === Bike Grid === */
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* === Card Styling === */
+.bike-card {
+  background: linear-gradient(145deg, #111111, #1a1a1a);
+  border: 2px solid #ff0000;
+  border-radius: 18px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.bike-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8),
+              0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* === Bike Images === */
+.bike-images {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.bike-images img {
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+  border-right: 1px solid #111;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.bike-images img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2) saturate(1.3);
+}
+
+/* === Info Section === */
+.bike-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.bike-info h2 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.bike-info p {
+  color: #bfbfbf;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* === Footer Section === */
+.bike-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.bike-price {
+  color: #00ffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.bike-btn {
+  background: linear-gradient(90deg, #ff0000, #cc0000);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.bike-btn:hover {
+  background: #00ffff;
+  color: #000;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* === Background Animation === */
+@keyframes electricShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .electric-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .bike-images img {
+    height: 200px;
+  }
+}

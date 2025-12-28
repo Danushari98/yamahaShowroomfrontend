@@ -1,0 +1,149 @@
+/* ==================== GLOBAL FIX (removes gap under footer) ==================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* Root app layout setup */
+#root, .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* ==================== FOOTER STYLES ==================== */
+.footer {
+  background: repeating-linear-gradient(
+    135deg,
+    #000,
+    #000 10px,
+    #111 10px,
+    #111 20px
+  );
+  color: #fff;
+  padding: 40px 0 0;
+  position: relative;
+  overflow: hidden;
+  animation: backgroundMove 10s linear infinite;
+  margin-top: 50px;
+}
+
+/* Animated background motion */
+@keyframes backgroundMove {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
+/* Footer content layout */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 0 40px;
+}
+
+/* Each section */
+.footer-section {
+  min-width: 180px;
+  margin: 20px 0;
+}
+
+.footer-section h3 {
+  color: #ff0000;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ==================== LINK STYLES (FIXED) ==================== */
+
+/* Base style for the Link element */
+.footer-section ul li a {
+  /* Inherit the base li color */
+  color: #ccc;
+  text-decoration: none; /* Remove default underline */
+  display: inline-block; /* Allows for transform on hover */
+  margin-bottom: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Hover state for the Link element */
+.footer-section ul li a:hover {
+  color: #ff0000; /* Change text color to Yamaha Red */
+  transform: translateX(5px); /* Apply the slide effect */
+  cursor: pointer;
+}
+
+/* REMOVE the old li styles that are no longer needed for interaction */
+/*
+.footer-section ul li {
+  color: #ccc;
+  margin-bottom: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-section ul li:hover {
+  color: #ff0000;
+  transform: translateX(5px);
+}
+*/
+
+/* ==================== END LINK STYLES (FIXED) ==================== */
+
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.4rem;
+}
+
+.social-icons svg {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icons svg:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  border-top: 1px solid #222;
+  margin-top: 30px;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #bbb;
+  background-color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin: 10px 0;
+  }
+}

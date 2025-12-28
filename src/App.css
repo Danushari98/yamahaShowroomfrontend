@@ -1,0 +1,191 @@
+/* === General App Styling === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Push content below fixed Navbar */
+.main-content,
+.home {
+  padding-top: 90px; /* height of navbar */
+}
+
+/* === Yamaha R3 Section === */
+.r3-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #000000 0%, #111111 100%);
+}
+
+.r3-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff0000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #ff0000;
+}
+
+.r3-subtitle {
+  color: #ccc;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* === Image Carousel === */
+.r3-image-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.r3-main-image {
+  width: 100%;
+  height: 450px;   /* ← Increase this */
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+  transition: transform 0.5s ease-in-out;
+}
+
+.r3-main-image:hover {
+  transform: scale(1.03);
+}
+
+/* === Thumbnail Images === */
+.r3-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.r3-thumb {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.r3-thumb:hover {
+  border-color: #ff0000;
+}
+
+.r3-thumb.active {
+  border-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+/* === Bike Details === */
+.r3-details {
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: left;
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  border-left: 4px solid #ff0000;
+}
+
+.r3-details h3 {
+  color: #ff0000;
+  font-size: 1.6rem;
+}
+
+.r3-details p {
+  color: #ccc;
+  line-height: 1.6;
+}
+.bike-img {
+  width: 100%;
+  height: 500px;   /* ← increase this number as needed */
+  object-fit: contain;  /* keeps full bike visible without crop */
+}
+
+/* === Section Headings (Parts, Service, etc.) === */
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin: 60px 0 20px;
+  color: #ff0000;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+/* === Footer Adjustments === */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  background: linear-gradient(270deg, #ff0000, #660000, #ff0000);
+  background-size: 400% 400%;
+  animation: moveGradient 6s infinite linear;
+  color: white;
+  padding: 20px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .r3-main-image {
+    height: 300px;
+  }
+
+  .r3-thumb {
+    width: 80px;
+    height: 55px;
+  }
+
+  .r3-title {
+    font-size: 2.2rem;
+  }
+
+  .r3-details {
+    padding: 20px;
+  }
+}
+
+
+
+/* Fix dropdown click issue */
+/* .navbar, 
+.dropdown, 
+.dropdown-menu {
+  position: relative;
+  z-index: 999999 !important;
+  pointer-events: auto !important;
+} */
+
+/* Make sure home page never blocks navbar */
+/* .home, 
+.main-content, 
+.r3-section, 
+.r3-image-container,
+.r3-main-image {
+  z-index: 1 !important;
+  position: relative !important;
+  pointer-events: auto;
+} */

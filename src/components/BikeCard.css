@@ -1,0 +1,237 @@
+/* ==================== 1. GLOBAL FIXES & BASE STYLES ==================== */
+
+html, body {
+  /* Removes default browser padding/margins and sets a black background */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif; /* Recommended base font */
+}
+
+/* Root app layout setup: Ensures content stretches to full height */
+#root, .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Pushes the footer to the bottom */
+}
+
+
+/* ==================== 2. FOOTER STYLES ==================== */
+
+.footer {
+  /* Animated striped background for a mechanical look */
+  background: repeating-linear-gradient(
+    135deg,
+    #000,
+    #000 10px,
+    #111 10px,
+    #111 20px
+  );
+  color: #fff;
+  padding: 40px 0 0;
+  position: relative;
+  overflow: hidden;
+  animation: backgroundMove 10s linear infinite;
+  margin-top: 50px;
+}
+
+/* Animated background motion */
+@keyframes backgroundMove {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
+/* Footer content layout */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 0 40px;
+}
+
+/* Each section */
+.footer-section {
+  min-width: 180px;
+  margin: 20px 0;
+}
+
+.footer-section h3 {
+  color: #ff0000; /* Yamaha Red */
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Link Styling Fix: Targets the Link element inside the li */
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none; /* Removes underline */
+  display: inline-block;
+  margin-bottom: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Link Hover Styling Fix */
+.footer-section ul li a:hover {
+  color: #ff0000;
+  transform: translateX(5px);
+}
+
+/* Social icons container */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.4rem;
+}
+
+/* Social icon hover effects */
+.social-icons svg {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icons svg:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  border-top: 1px solid #222;
+  margin-top: 30px;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #bbb;
+  background-color: #000;
+}
+
+/* ==================== 3. BIKE CARD GRID LAYOUT ==================== */
+
+.bike-grid {
+  /* Creates a responsive, multi-column layout for the product cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 50px 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==================== 4. INDIVIDUAL BIKE CARD STYLES ==================== */
+
+.bike-card {
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  color: white;
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.bike-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(255, 0, 0, 0.7);
+}
+
+.image-slider {
+  position: relative;
+}
+
+.bike-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Style for the fallback div when images don't load */
+.image-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  border-radius: 10px;
+  background-color: #222;
+  color: #888;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 1px dashed #444;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-controls button {
+  background: rgba(0, 0, 0, 0.6);
+  color: #ff0000;
+  border: none;
+  font-size: 22px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider-controls button:hover {
+  background: #ff0000;
+  color: white;
+}
+
+.price {
+  color: #ff0000;
+  font-weight: bold;
+  display: block;
+  margin-top: 6px;
+}
+
+/* ==================== 5. RESPONSIVE STYLES ==================== */
+
+@media (max-width: 900px) {
+  .bike-grid {
+    padding: 30px 40px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Footer changes */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Bike grid changes */
+  .bike-grid {
+    padding: 20px 20px;
+  }
+}

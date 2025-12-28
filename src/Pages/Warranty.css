@@ -1,0 +1,85 @@
+.warranty-container {
+  padding: 140px 40px 80px;
+  background: #000;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Title */
+.warranty-title {
+  text-align: center;
+  color: #ff0000;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.warranty-title:hover {
+  color: black;
+}
+
+/* Subtitle */
+.warranty-subtitle {
+  text-align: center;
+  color: #ccc;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.warranty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+/* Cards */
+.warranty-card {
+  background: #111;
+  border: 2px solid #ff0000;
+  padding: 25px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.warranty-card:hover {
+  background: #ff0000;   /* RED */
+  border-color: black;   /* BLACK */
+}
+
+/* Card Heading */
+.warranty-card h2 {
+  color: #ff0000;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.warranty-card:hover h2 {
+  color: black;  /* RED → BLACK */
+}
+
+/* Card Text */
+.warranty-card p {
+  color: #ddd;
+  font-size: 15px;
+}
+
+/* Highlight Span */
+.warranty-card span {
+  color: #ff0000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.warranty-card:hover span {
+  color: black;  /* RED → BLACK */
+}
+
+/* Bottom Note */
+.warranty-note {
+  text-align: center;
+  color: #999;
+  margin-top: 40px;
+  font-size: 14px;
+}

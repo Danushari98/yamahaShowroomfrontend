@@ -1,0 +1,276 @@
+/* ----------------------------------
+   PARTS PAGE BASE DESIGN
+---------------------------------- */
+
+.parts-page {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  overflow-x: hidden;
+}
+
+.parts-header {
+  position: relative;
+  background: linear-gradient(270deg, #000000, #1a0000, #ff0000);
+  background-size: 600% 600%;
+  animation: racingGradient 10s ease infinite;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@keyframes racingGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.parts-header .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.parts-header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.parts-header-content h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+.parts-header-content p {
+  color: #ddd;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.parts-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #111;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #ff0000;
+  font-weight: bold;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #ff0000;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ----------------------------------
+   PARTS GRID & CARD DESIGN
+---------------------------------- */
+
+.parts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.part-card {
+  background: linear-gradient(145deg, #1a1a1a, #000);
+  border: 2px solid #222;
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  text-align: center;
+}
+
+.part-card:hover {
+  transform: scale(1.05);
+  border-color: #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.part-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.part-card:hover img {
+  transform: scale(1.1);
+}
+
+.part-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.part-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.part-price {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.part-btn {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.part-btn:hover {
+  background: #fff;
+  color: #ff0000;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* ----------------------------------
+   BUY NOW MODAL (NEW)
+---------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-box {
+  background: #111;
+  border: 2px solid #ff0000;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from { transform: scale(0.6); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.modal-box h2 {
+  color: #ff0000;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.modal-box input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ff0000;
+  background: #000;
+  color: #fff;
+}
+
+.modal-box button {
+  width: 90%;
+  padding: 12px;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-box button:hover {
+  background: #fff;
+  color: #ff0000;
+}
+
+.close-btn {
+  background: transparent;
+  color: #ff5555;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.success-msg {
+  color: #00ff00;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+/* ----------------------------------
+   FOOTER
+---------------------------------- */
+
+.animated-footer {
+  background: linear-gradient(270deg, #000000, #330000, #ff0000);
+  background-size: 600% 600%;
+  animation: footerGlow 12s ease infinite;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+@keyframes footerGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+@media (max-width: 768px) {
+  .parts-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .parts-section {
+    padding: 50px 15px;
+  }
+
+  .part-card {
+    padding: 20px;
+  }
+}

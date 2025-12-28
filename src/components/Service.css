@@ -1,0 +1,189 @@
+/* ==============================
+   SERVICE PAGE (YAMAHA THEME)
+   ============================== */
+
+/* General Page Layout */
+.service-page {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  overflow-x: hidden;
+}
+
+/* ==============================
+   HEADER (Animated Gradient)
+   ============================== */
+.service-header {
+  position: relative;
+  background: linear-gradient(270deg, #000000, #1a0000, #ff0000);
+  background-size: 600% 600%;
+  animation: racingBackground 10s ease infinite;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+@keyframes racingBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.service-header .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.service-header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.service-header-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ff0000;
+  margin-bottom: 10px;
+}
+
+.service-header-content p {
+  font-size: 1.1rem;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+/* ==============================
+   SERVICE SECTION
+   ============================== */
+.service-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #111;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #ff0000;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #ff0000;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ==============================
+   SERVICE CARDS
+   ============================== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #1a1a1a, #000);
+  border: 2px solid #1c1c1c;
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  border-color: #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* Icons */
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ff0000;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  color: #fff;
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Titles & Text */
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  text-transform: none;
+}
+
+/* Price & Button */
+.service-price {
+  font-size: 1.2rem;
+  color: #ff0000;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.service-btn {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  background: #fff;
+  color: #ff0000;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+@media (max-width: 768px) {
+  .service-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .service-section {
+    padding: 50px 15px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+}

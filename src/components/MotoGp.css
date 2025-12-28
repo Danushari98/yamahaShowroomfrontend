@@ -1,0 +1,193 @@
+/* ===============================
+   YAMAHA MOTOGP PAGE (RACING RED THEME)
+   =============================== */
+
+.motogp-page {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   HEADER (ANIMATED GRADIENT)
+   =============================== */
+.motogp-header {
+  position: relative;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #000000, #1a0000, #ff0000);
+  background-size: 600% 600%;
+  animation: motogpGradient 10s ease infinite;
+  text-align: center;
+}
+
+@keyframes motogpGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.motogp-header .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.motogp-header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.motogp-header-content h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 20px #ff0000;
+}
+
+.motogp-header-content p {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   SECTION TITLE
+   =============================== */
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #ff0000;
+  margin: 80px 0 50px;
+  position: relative;
+  font-weight: bold;
+}
+
+.section-title::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #ff0000;
+  display: block;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* ===============================
+   RIDER GRID
+   =============================== */
+.rider-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
+  padding: 0 40px 80px;
+}
+
+.rider-card {
+  background: linear-gradient(145deg, #1a1a1a, #000);
+  border: 2px solid #222;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.rider-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #ff0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+}
+
+.rider-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.rider-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ===============================
+   TEXT & BUTTON
+   =============================== */
+.rider-card h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.rider-card h4 {
+  color: #ff0000;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.rider-card p {
+  color: #ccc;
+  font-size: 0.85rem;
+  text-transform: none;
+  margin-bottom: 15px;
+}
+
+.rider-btn {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.rider-btn:hover {
+  background: #fff;
+  color: #ff0000;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* ===============================
+   FOOTER (ANIMATED BACKGROUND)
+   =============================== */
+.animated-footer {
+  background: linear-gradient(270deg, #000000, #330000, #ff0000);
+  background-size: 600% 600%;
+  animation: footerGlow 12s ease infinite;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+@keyframes footerGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 768px) {
+  .motogp-header-content h1 {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .rider-grid {
+    padding: 0 20px 60px;
+  }
+}
