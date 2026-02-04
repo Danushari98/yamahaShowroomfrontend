@@ -9,12 +9,13 @@ import MotoGp from "./components/MotoGp.jsx";
 import Events from "./components/Events.jsx";
 import Contest from "./components/Contest.jsx";
 import BookTestRide from "./components/BookTestRide.jsx";
-import Warranty from "./pages/Warranty.jsx";
+
 import FindDealer from "./components/FindDealer.jsx";
 
-import MotorBikes from "./pages/MotorBikes.jsx";
-import Scooters from "./pages/Scooters.jsx";
-import ElectricBikes from "./pages/ElectricBikes.jsx";
+import MotorBikes from "./Pages/MotorBikes.jsx";
+import Scooters from "./Pages/Scooters.jsx";
+import ElectricBikes from "./Pages/ElectricBikes.jsx";
+import Warranty from "./Pages/Warranty.jsx";
 
 import "./App.css";
 
