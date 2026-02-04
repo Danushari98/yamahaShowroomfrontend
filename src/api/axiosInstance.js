@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://YOUR-BACKEND-URL.onrender.com/api/",
+  baseURL: "https://yamahashowroom.onrender.com/api/",
   timeout: 15000,
   headers: {
     "Content-Type": "application/json",
